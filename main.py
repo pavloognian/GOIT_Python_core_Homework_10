@@ -6,22 +6,18 @@ class Field:
         self.value = value
 
 class Phone(Field):
-    # def __init__(self, *args):
-    #     self.phones = args
-    def __init__(self, value):
-        super().__init__(value)
+    pass
 
 class Name(Field):
-    # def __init__(self, name:str):
-    #     self.name = name
-    def __init__(self, value):
-        super().__init__(value)
+    pass
         
 
 class Record:
-    def __init__(self, name: Name, phone: Phone):
+    def __init__(self, name: Name, phone=None):
         self.name = name
-        self.phones = [phone]
+        self.phones = []
+        if phone:
+            self.phones.append(phone)
 
     def add_phone(self, phone):
         phone_number = Phone(phone)
